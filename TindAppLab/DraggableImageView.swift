@@ -12,7 +12,7 @@ class DraggableImageView: UIView {
 
     @IBOutlet var draggableImageView: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
-    
+    var profileOriganalCenter: CGPoint!
     var image: UIImage? {
         get { return profileImageView.image }
         set { profileImageView.image = newValue }
@@ -38,7 +38,20 @@ class DraggableImageView: UIView {
             // custom initialization logic
 //        ...
     }
-    
+    @IBAction func onPan(sender: UIPanGestureRecognizer) {
+        
+        let translation = sender.translationInView(self)
+        
+        if sender.state == UIGestureRecognizerState.Began{
+            profileOriganalCenter = profileImageView.center
+        }else if sender.state == UIGestureRecognizerState.Changed{
+            profileImageView.center = CGPoint(x: profileOriganalCenter.x + translation.x, y: profileOriganalCenter.y)
+            
+        }else if sender.state == UIGestureRecognizerState.Ended{
+            
+        }
+        
+    }
 
     /*
     // Only override drawRect: if you perform custom drawing.
