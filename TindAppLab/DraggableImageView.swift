@@ -19,6 +19,16 @@ class DraggableImageView: UIView {
         set { profileImageView.image = newValue }
     }
     
+    func rotateImage(passedImage: UIImageView!, direction: String = ""){
+        let pi: CGFloat!
+        if direction == "left" || direction == "flipUp" || direction == "counterClockwise"{
+            pi = CGFloat(-3.14159265358979)
+        }else{
+            pi = CGFloat(M_PI)
+        }
+        passedImage.transform = CGAffineTransformRotate(passedImage.transform, pi/6)
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         initSubviews()
@@ -46,8 +56,10 @@ class DraggableImageView: UIView {
         if sender.state == UIGestureRecognizerState.Began{
             profileOriganalCenter = profileImageView.center
         }else if sender.state == UIGestureRecognizerState.Changed{
+            
             profileImageView.center = CGPoint(x: profileOriganalCenter.x + translation.x, y: profileOriganalCenter.y)
-            print("ch-ch-ch-changes")
+//            print("ch-ch-ch-changes")
+            rotateImage(profileImageView)
         }else if sender.state == UIGestureRecognizerState.Ended{
             
         }
