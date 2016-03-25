@@ -12,6 +12,7 @@ class DraggableImageView: UIView {
 
     @IBOutlet var draggableImageView: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
+    
     var profileOriganalCenter: CGPoint!
     var image: UIImage? {
         get { return profileImageView.image }
@@ -40,13 +41,13 @@ class DraggableImageView: UIView {
     }
     @IBAction func onPan(sender: UIPanGestureRecognizer) {
         
-        let translation = sender.translationInView(self)
+        let translation = sender.translationInView(draggableImageView)
         
         if sender.state == UIGestureRecognizerState.Began{
             profileOriganalCenter = profileImageView.center
         }else if sender.state == UIGestureRecognizerState.Changed{
             profileImageView.center = CGPoint(x: profileOriganalCenter.x + translation.x, y: profileOriganalCenter.y)
-            
+            print("ch-ch-ch-changes")
         }else if sender.state == UIGestureRecognizerState.Ended{
             
         }

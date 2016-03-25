@@ -22,7 +22,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="abS-W2-XMl" customClass="DraggableImageView" customModule="TindAppLab" customModuleProvider="target">
-                                <rect key="frame" x="8" y="132" width="304" height="304"/>
+                                <rect key="frame" x="-40" y="109" width="400" height="350"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.84109361810000005" green="0.95410217900000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
