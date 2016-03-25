@@ -9,7 +9,11 @@
 import UIKit
 
 class CardsViewController: UIViewController {
+    @IBOutlet var cardsView: UIView!
+    @IBOutlet weak var draggableImageView: DraggableImageView!
 
+    var profileOriganalCenter: CGPoint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -21,5 +25,20 @@ class CardsViewController: UIViewController {
     }
 
 
+    @IBAction func onPan(sender: UIPanGestureRecognizer) {
+        
+        let translation = sender.translationInView(cardsView)
+       
+        if sender.state == UIGestureRecognizerState.Began{
+            profileOriganalCenter = profileImage.center
+        }else if sender.state == UIGestureRecognizerState.Changed{
+            profileImage.center = CGPoint(x: profileOriganalCenter.x + translation.x, y: profileOriganalCenter.y)
+
+        }else if sender.state == UIGestureRecognizerState.Ended{
+            
+        }
+        
+    }
+    
 }
 
