@@ -32,15 +32,10 @@
                     <connections>
                         <outlet property="cardsView" destination="8bC-Xf-vdC" id="Wce-yG-bc6"/>
                         <outlet property="draggableImageView" destination="abS-W2-XMl" id="Sa5-WX-7wO"/>
-                        <outlet property="onPan" destination="yUs-0G-vGt" id="ZxF-k2-aGs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="yUs-0G-vGt">
-                    <connections>
-                        <action selector="onPan:" destination="BYZ-38-t0r" id="UNG-5W-MXo"/>
-                    </connections>
-                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="yUs-0G-vGt"/>
             </objects>
             <point key="canvasLocation" x="162" y="366"/>
         </scene>
